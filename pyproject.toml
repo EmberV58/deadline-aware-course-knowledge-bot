@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edtech-course-knowledge-bot"
+version = "0.1.0"
+description = "Deadline-aware internal course knowledge bot using Infrai retrieval and generation"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+  "fastapi>=0.115,<1",
+  "openai>=1.50,<2",
+  "requests>=2.32,<3",
+  "uvicorn>=0.30,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
